@@ -1,0 +1,10 @@
+This script was developed while writing a thesis. It can be used to control BIOGEME to run a binary logit model with no attributes of the alternatives. Additionally, the ASC can be automatically adjusted which can used instead of a weighted ESML under certain circumstances (proof in Manski and Lerman 1977, pp. 1982-1985, referenced by Ben-Akiva and Lerman (1985, p. 237)).
+
+The following steps are implemented:
+(1) setup parameters
+(2) call write_model_py.py which writes the model.py needed by pythonbiogeme.
+(3) call pythonbiogeme to run the model
+(4) adjust the ASC in the output file (in case of a WESML scenario)
+(5) display the output file in your browser
+
+Please have a look into write_model_py.py to check and change e.g. the model type and various other things biogeme provides which are yet hardcoded in the script.
