@@ -1,4 +1,4 @@
-This script was developed while writing a thesis. It can be used to control BIOGEME to run a binary logit model with no attributes of the alternatives. Additionally, the ASC can be automatically adjusted which can used instead of a weighted ESML under certain circumstances (proof in Manski and Lerman 1977, pp. 1982-1985, referenced by Ben-Akiva and Lerman (1985, p. 237)).
+This script was developed while writing a thesis. It can be used to control BIOGEME (http://biogeme.epfl.ch/) to run a binary logit model with no attributes of the alternatives. Additionally, the ASC can be automatically adjusted which can used instead of a weighted ESML under certain circumstances (proof in Manski and Lerman 1977, pp. 1982-1985, referenced by Ben-Akiva and Lerman (1985, p. 237)).
 
 The following steps are implemented:
 (1) setup parameters
