@@ -32,6 +32,7 @@ def main(argv):
         elif opt in ("-n", "--weight-cal"): # recalibrates the weight
             weight_cal = arg
         elif opt in ("-o", "--output"):
+            output_dir = arg
             output = arg + ".py"
         elif opt in ("-c", "--choice"):
             choice = arg
@@ -101,7 +102,15 @@ availabilityStatistics(av,'obsIter')
 BIOGEME_OBJECT.PARAMETERS['optimizationAlgorithm'] = 'CFSQP'
 BIOGEME_OBJECT.PARAMETERS['numberOfThreads'] = '2'"""
 
-    with open(output, "w") as text_file:
+    
+
+    # make dir
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    fname = os.path.join(output_dir,output)    
+    
+    with open(fname, "w") as text_file:
         print(py, file=text_file)
 
 if __name__ == "__main__":
