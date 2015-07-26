@@ -5,6 +5,11 @@ The following steps are implemented:
 (2) call write_model_py.py which writes the model.py needed by pythonbiogeme.
 (3) call pythonbiogeme to run the model
 (4) adjust the ASC in the output file (in case of a WESML scenario)
+	and add confidence intervals to parameters (alpha=0.05, two-sided)
 (5) display the output file in your browser
 
 Please have a look into write_model_py.py to check and change e.g. the model type and various other things biogeme provides which are yet hardcoded in the script.
+
+ToDo:
+	- implement subdirectories
+	- better error handling

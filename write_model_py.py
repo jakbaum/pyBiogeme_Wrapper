@@ -103,14 +103,9 @@ BIOGEME_OBJECT.PARAMETERS['optimizationAlgorithm'] = 'CFSQP'
 BIOGEME_OBJECT.PARAMETERS['numberOfThreads'] = '2'"""
 
     
-
-    # make dir
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-
-    fname = os.path.join(output_dir,output)    
+ 
     
-    with open(fname, "w") as text_file:
+    with open(output, "w") as text_file:
         print(py, file=text_file)
 
 if __name__ == "__main__":
