@@ -5,17 +5,18 @@ import sys, getopt, os
 
 
 def main(argv):
-    usage_text = 'model.py -o <outputfile> -p <paras[]> -ch <choice_var> -w <weight> -c <weight_calibration>'
+    usage_text = 'model.py -o <outputfile> -a <ASC> -p <beta-paras[]> -ch <choice_var> -w <weight> -c <weight_calibration>'
     weight = "1.0"
     weight_cal = "1.0"
     beta= []
     output = "modell.py"
     choice = "CHOICE"
+    asc = "ASC"
     
     py = ""
     
     try:
-        opts, args = getopt.getopt(argv,"o:p:c:w:n:",["output=","pars=","choice=","weight=","weight-cal="])
+        opts, args = getopt.getopt(argv,"o:p:c:a:w:n:",["output=","asc=","pars=","choice=","weight=","weight-cal="])
     except getopt.GetoptError:
         print (usage_text)
         sys.exit(2)
@@ -24,7 +25,9 @@ def main(argv):
         if opt == '-h': #HELP!
             print (usage_text)
             sys.exit()
-
+        elif opt in ("-a", "--asc"): # Name of ASC
+            if len(arg)>0:
+                asc = arg
         elif opt in ("-p", "--pars"): # List of model parameters for V_CS
             beta = arg
         elif opt in ("-w", "--weight"): # weights the FFCS_USER-data
@@ -38,6 +41,7 @@ def main(argv):
             choice = arg
             
     print ("Output file: ", output)
+    print ("ASC is: ", asc)
     print ('parameters are ', beta)
     print ('choice var is ', choice)
     print ('Weight is ', weight)
@@ -55,10 +59,10 @@ from statistics import *
 #   - 4  Upper bound.
 #   - 5  0: estimate the parameter, 1: keep it fixed.
 
-ASC = Beta('ASC',0,-100,100,0)
+"""+str(asc)+""" = Beta("""+"'"+str(asc)+"'"+""",0,-100,100,0)
 """
     
-    V1 = "ASC"
+    V1 = str(asc)
 
     for par in beta:
         s = "B_"+str(par) #name of beta par
