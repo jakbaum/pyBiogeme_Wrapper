@@ -2,7 +2,7 @@ This script was developed while writing a thesis. It can be used to control BIOG
 
 The following steps are implemented:
 (1) setup parameters
-(2) call write_model_py.py which writes the model.py needed by pythonbiogeme.
+(2) call write_model_py.py which writes the model.py needed by pythonbiogeme into own subdirectory.
 (3) call pythonbiogeme to run the model
 (4) adjust the ASC in the output file (in case of a WESML scenario)
 	and add confidence intervals to parameters (alpha=0.05, two-sided)
@@ -11,5 +11,5 @@ The following steps are implemented:
 Please have a look into write_model_py.py to check and change e.g. the model type and various other things biogeme provides which are yet hardcoded in the script.
 
 ToDo:
-	- implement subdirectories
 	- better error handling
+	- relative instead of absolute paths
